@@ -24,4 +24,14 @@ class TripStop extends Model
         'cost',
     ];
 
+    /**
+     * trips function
+     * Many to one relation between trips stops and trips
+     * @return void
+     */
+    public function trips()
+    {
+        return $this->belongsTo(Trip::class, 'trip_id');
+    }
+
 }

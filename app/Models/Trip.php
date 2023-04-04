@@ -22,4 +22,15 @@ class Trip extends Model
         'deprature_time',
         'arrival_time',
     ];
+
+    /**
+     * trips function
+     * One to many relation between trips and trips stops
+     * @return void
+     */
+    public function tripsStops()
+    {
+        return $this->hasMany(TripStop::class, 'trip_id');
+    }
+
 }
